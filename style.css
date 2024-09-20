@@ -1,0 +1,125 @@
+*, *:before *:after
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #080710;
+}
+
+.container {
+    width: auto;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    right: 50%;
+}
+
+.container .circle1, .circle2 {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle1 {
+    background: linear-gradient(blue, #bf23f6);
+    left: -80px;
+    top: -70px;
+}
+
+.circle2 {
+    background: linear-gradient(to right, #ff512f, yellow);
+    right: -80px;
+    bottom: -70px;
+}
+
+form {
+    height: 520px;
+    width: auto;
+    background-color: rgba(255,255,255,0.08);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    right: auto;
+    border-radius:10px ;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 50px;
+}
+
+form * {
+    color: white;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 42px;
+    text-align: center;
+}
+
+form h3 span {
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.08);
+    border: none;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 300px;
+}
+
+::placeholder {
+    color: #e5e5e5;
+}
+
+button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: white;
+    color: black;
+    height: 45px;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #ff512f, yellow);
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    form{
+    flex: 100%;
+    width: 100%;
+    left: 50%;
+    right: 50%;
+    flex-direction: column-reverse;
+    }
+} 

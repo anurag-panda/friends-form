@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </div>
+
+    <form method="post" name="google-sheet">
+        <h3>Welcome Friends
+            <span>Contact Form</span>
+        </h3>
+
+        <label for="name">Full Name</label>
+        <input type="text" placeholder="example: Anurag Panda",id="name" name="Name" required>
+
+        <label for="email">Email (optional)</label>
+        <input type="text" placeholder="example: anurag@gmail.com",id="email" name="Email">
+
+        <label for="mobile">Mobile Number</label>
+        <input type="text" placeholder="example: 9876543210",id="mobile" name="Mobile" required minlength=10 maxlength=10>
+
+        <button name="Submit">Submit</button>
+    </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzJpit2KvQn16qxJLxSd1_ngJslJ8C9GShG937s7bpxSN1E3h35ANB128rh9gGbfaWd8w/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting me..! I Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
+
+</body>
+</html>
